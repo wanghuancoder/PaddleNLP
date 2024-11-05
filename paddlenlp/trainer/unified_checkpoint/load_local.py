@@ -16,12 +16,8 @@
 import gc
 import os
 
+import paddle
 from tqdm.auto import tqdm
-
-try:
-    import paddle
-except:
-    paddle = None
 
 from paddlenlp.peft import LoRAModel, PrefixModelForCausalLM
 from paddlenlp.transformers.model_utils import (

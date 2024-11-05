@@ -21,11 +21,6 @@ import paddle
 import paddle.distributed as dist
 from paddle.distributed import fleet
 
-try:
-    from paddle.base import core
-except:
-    core = None
-
 from paddlenlp.peft import LoRAModel, PrefixModelForCausalLM
 from paddlenlp.trainer.trainer_utils import ExplicitEnum, ShardingOption
 from paddlenlp.trainer.utils.helper import distributed_isfile

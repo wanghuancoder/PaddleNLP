@@ -22,11 +22,6 @@ import paddle
 import paddle.distributed as dist
 from paddle.distributed import fleet
 
-try:
-    from paddle.base import core
-except:
-    core = None
-
 from paddlenlp.peft import LoRAModel, PrefixModelForCausalLM
 from paddlenlp.transformers.model_utils import _load_state_dict_into_model
 from paddlenlp.transformers.utils import device_guard, is_safetensors_available

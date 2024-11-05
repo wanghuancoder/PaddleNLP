@@ -19,11 +19,6 @@ import os
 
 import paddle
 
-try:
-    from paddle.base import core
-except:
-    core = None
-
 from paddlenlp.peft import LoRAModel, PrefixModelForCausalLM
 from paddlenlp.transformers.model_utils import (
     _load_state_dict_into_model,

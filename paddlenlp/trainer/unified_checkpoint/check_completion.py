@@ -30,11 +30,6 @@ from paddlenlp.utils.env import (
 from paddlenlp.utils.log import logger
 from paddlenlp.utils.nested import flatten_list
 
-try:
-    from paddle.base import core
-except:
-    core = None
-
 from .utils import (
     get_expected_state_dict,
     is_sharding_split_param_mode,

@@ -19,11 +19,6 @@ import os
 import paddle
 from paddle.distributed import fleet
 
-try:
-    from paddle.base import core
-except:
-    core = None
-
 from paddlenlp.peft import LoRAModel, PrefixModelForCausalLM
 from paddlenlp.trainer.argparser import strtobool
 from paddlenlp.trainer.utils.helper import distributed_isfile
