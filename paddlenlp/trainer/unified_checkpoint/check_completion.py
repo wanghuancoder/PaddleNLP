@@ -200,7 +200,7 @@ def check_unified_optimizer(args, model, optimizer, resume_from_checkpoint, safe
                 if args.use_expert_parallel and dp_rank > 0 and not getattr(state_dict[key], "no_sync", False):
                     continue
 
-                if is_master_weights and state_dict[key].dtype == core.VarDesc.VarType.FP32:
+                if is_master_weights and state_dict[key].dtype == paddle.float32:
                     continue
 
                 if not is_master_weights:

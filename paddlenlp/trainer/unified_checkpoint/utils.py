@@ -231,11 +231,7 @@ def get_expected_keys(args, sharded_metadata, model, optimizer, is_master_weight
     expected_keys = []
     for key in list(sharded_metadata["all_optimizer_keys"]):
         key_name = key.split("/")[0]
-        if (
-            is_master_weights
-            and key_name in model_state_dict
-            and model_state_dict[key_name].dtype == core.VarDesc.VarType.FP32
-        ):
+        if is_master_weights and key_name in model_state_dict and model_state_dict[key_name].dtype == paddle.float32:
             continue
 
         if args.use_expert_parallel and args.data_parallel_rank > 0:
